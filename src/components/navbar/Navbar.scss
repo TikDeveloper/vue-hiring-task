@@ -1,0 +1,106 @@
+.nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  &-list,
+  &-auth-list {
+    display: flex;
+    align-items: center;
+    > li:not(:first-child) {
+      margin-left: 15px;
+    }
+    > li > a {
+      display: block;
+      padding: 10px 15px;
+      color: var(--gray-violet);
+      font-weight: var(--bold-fw);
+      text-transform: capitalize;
+    }
+  }
+  .signUpBtn {
+    background: var(--cyan);
+    border-radius: 25px;
+    color: white;
+  }
+
+  &-dropdown {
+    display: none;
+  }
+  &-burger {
+    display: none;
+    cursor: pointer;
+    .bar1,
+    .bar2,
+    .bar3 {
+      width: 35px;
+      height: 5px;
+      background-color: var(--gray-violet);
+      margin: 5px 0;
+      transition: 0.4s;
+    }
+    &.open .bar1 {
+      -webkit-transform: rotate(-45deg) translate(-7px, 5px);
+      transform: rotate(-45deg) translate(-7px, 5px);
+    }
+    &.open .bar2 {
+      opacity: 0;
+    }
+    &.open .bar3 {
+      -webkit-transform: rotate(45deg) translate(-8px, -8px);
+      transform: rotate(45deg) translate(-8px, -8px);
+    }
+  }
+}
+@media screen and (max-width: 768px) {
+  .nav {
+    justify-content: flex-end;
+    &-list,
+    &-auth-list {
+      display: none;
+    }
+    &-burger {
+      display: block;
+      &.open ~ div {
+        display: block;
+      }
+    }
+    &-dropdown {
+      position: absolute;
+      z-index: 999;
+      left: 0;
+      top: 100%;
+      width: 100%;
+      padding: 0px 25px;
+      background-color: var(--dark-violet);
+      border-radius: 5px;
+      > hr {
+        margin: 25px 0;
+      }
+      &-list,
+      &-auth-list {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        > li:not(:first-child) {
+          margin-top: 10px;
+        }
+        > li > a {
+          display: block;
+          padding: 10px 15px;
+          color: white;
+          font-weight: var(--bold-fw);
+          text-transform: capitalize;
+        }
+      }
+      &-auth-list {
+        padding-top: 20px;
+        border-top: 1px solid;
+        margin-bottom: 35px;
+      }
+      &-list {
+        margin-bottom: 20px;
+        margin-top: 35px;
+      }
+    }
+  }
+}

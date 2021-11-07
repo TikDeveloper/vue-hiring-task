@@ -1,0 +1,40 @@
+.layer-100 {
+  padding: 0 100px;
+  @media screen and (max-width: 1024px) {
+    padding: 0 25px;
+  }
+}
+
+// Headings && Text //
+.st-h1 {
+  font-size: var(--h1-fz);
+}
+.st-h2 {
+  font-size: var(--h2-fz);
+}
+.st-h3 {
+  font-size: var(--h3-fz);
+}
+.st-h4 {
+  font-size: var(--h4-fz);
+}
+.st-desc {
+  font-size: var(--desc-fz);
+}
+.st-h1,
+.st-h2,
+.st-h3,
+.st-h4 {
+  color: var(--dark-violet-v);
+}
+
+// Simple Button //
+.st-btn {
+  padding: 6px 12px;
+  background-color: var(--cyan);
+  font-weight: var(--bold-fw);
+  text-transform: capitalize;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}

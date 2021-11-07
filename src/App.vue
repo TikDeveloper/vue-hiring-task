@@ -1,32 +1,32 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view />
+    <router-view></router-view>
   </div>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script>
+import { mapActions } from 'vuex';
+import './assets/scss/index.scss';
 
-#nav {
-  padding: 30px;
+export default {
+  name: 'app',
+  metaInfo: {
+    title: 'Vue Task',
+    titleTemplate: '%s | My Awesome Webapp',
+  },
+  mounted() {
+    window.addEventListener('storage', this.handleStorage);
+  },
+  unmounted() {
+    window.removeEventListener('storage', this.handleStorage);
+  },
+  methods: {
+    ...mapActions('auth', ['logoutUser']),
+    handleStorage() {
+      // this.logoutUser().then(() => this.$router.replace({ name: 'login' }));
+    },
+  },
+};
+</script>
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
-}
-</style>
+<style></style>

@@ -1,0 +1,24 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: 0.3s all ease;
+}
+body {
+  color: var(--gray-violet);
+  font-family: var(--body-fm);
+  font-size: var(--body-fz);
+  font-weight: var(--medium-fw);
+}
+button {
+  border: none;
+}
+a {
+  text-decoration: none;
+}
+ul {
+  list-style-type: none;
+}
+input {
+  outline: none;
+}
